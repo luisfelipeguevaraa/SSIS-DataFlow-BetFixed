@@ -1,0 +1,2628 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/5/2021 5:25:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-6K63MD2"
+  DTS:CreatorName="DESKTOP-6K63MD2\Luis"
+  DTS:DTSID="{7AFF7786-7B9F-4417-97E1-4B6EAA1BCCD8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{F959761A-CD7C-4948-9737-5076539616AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-6K63MD2\SQLEXPRESS.FIXED.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{58AF8263-3811-4852-9C58-83BB00B0E64C}"
+      DTS:ObjectName="DESKTOP-6K63MD2\SQLEXPRESS.FIXED.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-6K63MD2\SQLEXPRESS;User ID=sa;Initial Catalog=FIXED;Persist Security Info=True;Application Name=SSIS-Package-{58AF8263-3811-4852-9C58-83BB00B0E64C}DESKTOP-6K63MD2\SQLEXPRESS.FIXED.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7/9QFGW1EKzFt4+trRGhgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABym84F/T64ARf3jHJFvCdxFamvhGbO7nVxa2ozaks/LQAAAAAOgAAAAAIAACAAAAAYF5DNkzuWSf4vIx7zaDUMe1bALBDbixQrePbqQQ8jhhAAAAA6JaI5UumMr6esE5/Dwl/WQAAAAB4r4x03FegmZAZ6QV8+QH4IvYLSGD0HloetGpgwPrJOtk6jzicwhzRDljFXjR6GWaJsktkN8pjt+qEqUGAutQY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ta_matchs]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{96525880-FC9D-4865-B960-0090DFA7B7A1}"
+      DTS:ObjectName="ta_matchs">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"C:\\DISCOD\\proyectos\\apuestas\\Proyecto\\SSIS\\DescargaArchivos\\TA_MATCHS_"+(DT_STR,4,1252)DATEPART( "yyyy" , getdate() ) + RIGHT("0" + (DT_STR,4,1252)DATEPART( "mm" , getdate() ), 2) + RIGHT("0" + (DT_STR,4,1252)DATEPART( "dd" , getdate() ), 2) +".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DISCOD\proyectos\apuestas\Proyecto\SSIS\DescargaArchivos\TA_MATCHS_20211105.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{86069253-B2E5-4EFF-A391-5473AC79075C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="anio"
+              DTS:DTSID="{B62EE733-37A1-430E-8C76-86708C957F86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="program"
+              DTS:DTSID="{5160951D-CDA0-4407-9EF5-8EC78A87C913}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="matchCode"
+              DTS:DTSID="{41227906-33F9-4DB7-8696-BB13297925AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="league"
+              DTS:DTSID="{B8EAC015-0067-42C8-BC2C-7DF81EA5B1B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="flag"
+              DTS:DTSID="{F76839E1-D2A6-446A-A555-736F47D9486C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="leagueDesc"
+              DTS:DTSID="{5A33613D-676F-44F7-80A3-747C91B78953}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="betLocal"
+              DTS:DTSID="{DB97943B-126B-474D-9297-8DFAFE1DA6AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="betVisit"
+              DTS:DTSID="{151D272D-60BA-48A1-97F1-9BB5BB0079AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="urlVersus"
+              DTS:DTSID="{7EEEE1B3-F015-4BEC-A877-8FCCA5760B7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="urlLocal"
+              DTS:DTSID="{8625E436-FC52-4B32-A129-28FDFFBC47C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="urlVisit"
+              DTS:DTSID="{22099ADE-BD0E-40E9-AF86-DA641A0FBC6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="teamLocal"
+              DTS:DTSID="{9BE9D78B-D20E-4BBE-816B-F413F4859A2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="teamVisit"
+              DTS:DTSID="{20394315-0852-4F54-B75F-2157DDEADBD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estate"
+              DTS:DTSID="{7143224A-DBA4-40BE-9FBF-404B5143D27E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cHour"
+              DTS:DTSID="{7A0BE7B2-B789-4992-A9CC-5D19C62BDD7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoL"
+              DTS:DTSID="{4ACE9BE5-B538-4341-9AF8-A206E7B36BAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoE"
+              DTS:DTSID="{1E704AD6-BC59-4CEA-A5D8-64FF9E63B1F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoV"
+              DTS:DTSID="{D884B76D-5A43-4DAB-98C2-A74939C99792}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoDouLE"
+              DTS:DTSID="{EDCA4211-64E1-4A9F-8AA0-E47DDAB461F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoDouLV"
+              DTS:DTSID="{644E9981-B113-46A6-8137-58955B800BFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoDouEV"
+              DTS:DTSID="{254821CC-4FFB-4BB1-B119-E9A5844BB5B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo1TL"
+              DTS:DTSID="{3B458CF8-A2F6-49C9-B601-8EFE95FC0152}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo1TE"
+              DTS:DTSID="{A0728923-202F-4BEB-9789-E994F3D219E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo1TV"
+              DTS:DTSID="{60BD61F1-5FFE-4FD5-B13A-75E63348F51C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo2TL"
+              DTS:DTSID="{027D78F4-57CC-45D6-9B93-00B081439637}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo2TE"
+              DTS:DTSID="{AB0AE3AD-7F11-48C5-A6FB-533CE74FD3C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuo2TV"
+              DTS:DTSID="{5FC7E075-B973-48A4-8ABA-9E2F140756E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoLL"
+              DTS:DTSID="{1FADC4CC-8EFE-4666-AF8C-E16C1C983893}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoEL"
+              DTS:DTSID="{1A967369-9BF9-4146-9A80-3B128EEE07B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoVL"
+              DTS:DTSID="{4E374A18-FE1F-4028-9215-72765AF38DEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoLE"
+              DTS:DTSID="{D6AF92D6-2525-453D-A59A-7255003C186C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoEE"
+              DTS:DTSID="{149F208B-39D1-476E-A675-0718597FEF79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoVE"
+              DTS:DTSID="{6184020B-C103-4255-9B06-24EBE0B38CE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoLV"
+              DTS:DTSID="{6108B661-2280-4EB3-A317-BD20C2EEB48B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoEV"
+              DTS:DTSID="{B03226F9-33A6-4FC4-8EAC-034CBCE804E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoVV"
+              DTS:DTSID="{525391FD-9F92-43D1-97E3-03F44CEF8B34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMin1p5"
+              DTS:DTSID="{2C6C6F57-3E8D-4A2D-83E8-44A29C12BAFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMas1p5"
+              DTS:DTSID="{867C23B4-FA8E-42C8-8280-D4202F8C6E29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMin2p5"
+              DTS:DTSID="{769A4422-E49C-462E-A838-C4CEABB683D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMas2p5"
+              DTS:DTSID="{1CCCD263-4301-4243-8B9F-E6DDA742F9CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMin3p5"
+              DTS:DTSID="{0FDE09B9-8080-4CBC-BF22-55A70622BB72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoMas3p5"
+              DTS:DTSID="{18FF44F3-9336-494E-B425-168B7EC45EDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoRan0a1"
+              DTS:DTSID="{4F55BFA8-4162-4385-A7A3-5ED8661DC707}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoRan2a3"
+              DTS:DTSID="{FA61360B-C8FC-4A98-93C4-00556C9FB792}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoRan4aMas"
+              DTS:DTSID="{63FDDC6D-1415-4530-B257-C9F5B4352225}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoA"
+              DTS:DTSID="{3FA7BF90-3442-424C-8900-C9DFBB85F827}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuoNA"
+              DTS:DTSID="{A8914049-6847-406D-A28F-974752A7444F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vivo"
+              DTS:DTSID="{EF1400F1-FCD9-48B1-AB7D-6B39D1B65ADF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="minimo"
+              DTS:DTSID="{6196F83D-4328-4B3B-B2CE-49901E466558}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="chartistLocal"
+              DTS:DTSID="{43194454-8C5F-43D1-8433-0C67334E4C35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="chartistVisit"
+              DTS:DTSID="{BBF81370-9A83-42CD-8A46-05A26F59F6A4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{427F9803-0981-4CBF-9539-E55608954E25}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Destino de archivo plano"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Destino de archivo plano"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Destino de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ta_matchs]"
+                  connectionManagerRefId="Package.ConnectionManagers[ta_matchs]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[id]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[anio]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="anio"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[anio]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[anio]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[program]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="program"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[program]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[program]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[matchCode]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="matchCode"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[matchCode]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[matchCode]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[league]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="league"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[league]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[league]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[flag]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="flag"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[flag]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[flag]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[leagueDesc]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="leagueDesc"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[leagueDesc]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[leagueDesc]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[betLocal]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="betLocal"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[betLocal]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betLocal]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[betVisit]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="betVisit"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[betVisit]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betVisit]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[urlVersus]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="urlVersus"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlVersus]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVersus]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[urlLocal]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="urlLocal"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlLocal]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlLocal]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[urlVisit]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="urlVisit"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlVisit]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVisit]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[teamLocal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="teamLocal"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[teamLocal]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamLocal]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[teamVisit]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="teamVisit"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[teamVisit]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamVisit]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[estate]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="estate"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[estate]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[estate]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cHour]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="cHour"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cHour]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cHour]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoL]"
+                      cachedDataType="numeric"
+                      cachedName="cuoL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoE]"
+                      cachedDataType="numeric"
+                      cachedName="cuoE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoDouLE]"
+                      cachedDataType="numeric"
+                      cachedName="cuoDouLE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouLE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoDouLV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoDouLV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouLV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoDouEV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoDouEV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouEV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouEV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo1TL]"
+                      cachedDataType="numeric"
+                      cachedName="cuo1TL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo1TE]"
+                      cachedDataType="numeric"
+                      cachedName="cuo1TE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo1TV]"
+                      cachedDataType="numeric"
+                      cachedName="cuo1TV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo2TL]"
+                      cachedDataType="numeric"
+                      cachedName="cuo2TL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo2TE]"
+                      cachedDataType="numeric"
+                      cachedName="cuo2TE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuo2TV]"
+                      cachedDataType="numeric"
+                      cachedName="cuo2TV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoLL]"
+                      cachedDataType="numeric"
+                      cachedName="cuoLL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoEL]"
+                      cachedDataType="numeric"
+                      cachedName="cuoEL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoVL]"
+                      cachedDataType="numeric"
+                      cachedName="cuoVL"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoLE]"
+                      cachedDataType="numeric"
+                      cachedName="cuoLE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoEE]"
+                      cachedDataType="numeric"
+                      cachedName="cuoEE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoVE]"
+                      cachedDataType="numeric"
+                      cachedName="cuoVE"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoLV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoLV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoEV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoEV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoVV]"
+                      cachedDataType="numeric"
+                      cachedName="cuoVV"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVV]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMin1p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMin1p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin1p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin1p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMas1p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMas1p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas1p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas1p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMin2p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMin2p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin2p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin2p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMas2p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMas2p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas2p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas2p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMin3p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMin3p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin3p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin3p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoMas3p5]"
+                      cachedDataType="numeric"
+                      cachedName="cuoMas3p5"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas3p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas3p5]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoRan0a1]"
+                      cachedDataType="numeric"
+                      cachedName="cuoRan0a1"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan0a1]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan0a1]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoRan2a3]"
+                      cachedDataType="numeric"
+                      cachedName="cuoRan2a3"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan2a3]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan2a3]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoRan4aMas]"
+                      cachedDataType="numeric"
+                      cachedName="cuoRan4aMas"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan4aMas]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan4aMas]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoA]"
+                      cachedDataType="numeric"
+                      cachedName="cuoA"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoA]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoA]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[cuoNA]"
+                      cachedDataType="numeric"
+                      cachedName="cuoNA"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoNA]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoNA]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[vivo]"
+                      cachedDataType="bool"
+                      cachedName="vivo"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[vivo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[vivo]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[minimo]"
+                      cachedDataType="i4"
+                      cachedName="minimo"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[minimo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[minimo]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[chartistLocal]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="chartistLocal"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[chartistLocal]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistLocal]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[chartistVisit]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="chartistVisit"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[chartistVisit]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistVisit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[anio]"
+                      dataType="wstr"
+                      length="8"
+                      name="anio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[program]"
+                      dataType="wstr"
+                      length="6"
+                      name="program" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[matchCode]"
+                      dataType="wstr"
+                      length="5"
+                      name="matchCode" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[league]"
+                      dataType="wstr"
+                      length="8"
+                      name="league" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[flag]"
+                      dataType="wstr"
+                      length="50"
+                      name="flag" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[leagueDesc]"
+                      dataType="wstr"
+                      length="50"
+                      name="leagueDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[betLocal]"
+                      dataType="wstr"
+                      length="250"
+                      name="betLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[betVisit]"
+                      dataType="wstr"
+                      length="250"
+                      name="betVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlVersus]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlVersus" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlLocal]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[urlVisit]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[teamLocal]"
+                      dataType="wstr"
+                      length="50"
+                      name="teamLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[teamVisit]"
+                      dataType="wstr"
+                      length="50"
+                      name="teamVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[estate]"
+                      dataType="wstr"
+                      length="1"
+                      name="estate" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cHour]"
+                      dataType="wstr"
+                      length="5"
+                      name="cHour" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoL]"
+                      dataType="numeric"
+                      name="cuoL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoE]"
+                      dataType="numeric"
+                      name="cuoE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoV]"
+                      dataType="numeric"
+                      name="cuoV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouLE]"
+                      dataType="numeric"
+                      name="cuoDouLE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouLV]"
+                      dataType="numeric"
+                      name="cuoDouLV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoDouEV]"
+                      dataType="numeric"
+                      name="cuoDouEV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TL]"
+                      dataType="numeric"
+                      name="cuo1TL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TE]"
+                      dataType="numeric"
+                      name="cuo1TE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo1TV]"
+                      dataType="numeric"
+                      name="cuo1TV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TL]"
+                      dataType="numeric"
+                      name="cuo2TL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TE]"
+                      dataType="numeric"
+                      name="cuo2TE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuo2TV]"
+                      dataType="numeric"
+                      name="cuo2TV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLL]"
+                      dataType="numeric"
+                      name="cuoLL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEL]"
+                      dataType="numeric"
+                      name="cuoEL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVL]"
+                      dataType="numeric"
+                      name="cuoVL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLE]"
+                      dataType="numeric"
+                      name="cuoLE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEE]"
+                      dataType="numeric"
+                      name="cuoEE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVE]"
+                      dataType="numeric"
+                      name="cuoVE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoLV]"
+                      dataType="numeric"
+                      name="cuoLV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoEV]"
+                      dataType="numeric"
+                      name="cuoEV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoVV]"
+                      dataType="numeric"
+                      name="cuoVV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin1p5]"
+                      dataType="numeric"
+                      name="cuoMin1p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas1p5]"
+                      dataType="numeric"
+                      name="cuoMas1p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin2p5]"
+                      dataType="numeric"
+                      name="cuoMin2p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas2p5]"
+                      dataType="numeric"
+                      name="cuoMas2p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMin3p5]"
+                      dataType="numeric"
+                      name="cuoMin3p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoMas3p5]"
+                      dataType="numeric"
+                      name="cuoMas3p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan0a1]"
+                      dataType="numeric"
+                      name="cuoRan0a1"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan2a3]"
+                      dataType="numeric"
+                      name="cuoRan2a3"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoRan4aMas]"
+                      dataType="numeric"
+                      name="cuoRan4aMas"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoA]"
+                      dataType="numeric"
+                      name="cuoA"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[cuoNA]"
+                      dataType="numeric"
+                      name="cuoNA"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[vivo]"
+                      dataType="bool"
+                      name="vivo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[minimo]"
+                      dataType="i4"
+                      name="minimo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[chartistLocal]"
+                      dataType="wstr"
+                      length="200"
+                      name="chartistLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[chartistVisit]"
+                      dataType="wstr"
+                      length="200"
+                      name="chartistVisit" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM matchInit;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-6K63MD2\SQLEXPRESS.FIXED.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-6K63MD2\SQLEXPRESS.FIXED.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[anio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[anio]"
+                      length="8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[anio]"
+                      name="anio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[program]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[program]"
+                      length="6"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[program]"
+                      name="program"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[matchCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[matchCode]"
+                      length="5"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[matchCode]"
+                      name="matchCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[league]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[league]"
+                      length="8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[league]"
+                      name="league"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[flag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[flag]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[flag]"
+                      name="flag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[leagueDesc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[leagueDesc]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[leagueDesc]"
+                      name="leagueDesc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betLocal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[betLocal]"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betLocal]"
+                      name="betLocal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betVisit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[betVisit]"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[betVisit]"
+                      name="betVisit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVersus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlVersus]"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVersus]"
+                      name="urlVersus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlLocal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlLocal]"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlLocal]"
+                      name="urlLocal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVisit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlVisit]"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[urlVisit]"
+                      name="urlVisit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamLocal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[teamLocal]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamLocal]"
+                      name="teamLocal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamVisit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[teamVisit]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[teamVisit]"
+                      name="teamVisit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[estate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[estate]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[estate]"
+                      name="estate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cHour]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cHour]"
+                      length="5"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cHour]"
+                      name="cHour"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoL]"
+                      name="cuoL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoE]"
+                      name="cuoE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoV]"
+                      name="cuoV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouLE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLE]"
+                      name="cuoDouLE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouLV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouLV]"
+                      name="cuoDouLV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouEV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouEV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoDouEV]"
+                      name="cuoDouEV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TL]"
+                      name="cuo1TL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TE]"
+                      name="cuo1TE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo1TV]"
+                      name="cuo1TV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TL]"
+                      name="cuo2TL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TE]"
+                      name="cuo2TE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuo2TV]"
+                      name="cuo2TV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLL]"
+                      name="cuoLL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEL]"
+                      name="cuoEL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVL]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVL]"
+                      name="cuoVL"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLE]"
+                      name="cuoLE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEE]"
+                      name="cuoEE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVE]"
+                      name="cuoVE"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoLV]"
+                      name="cuoLV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoEV]"
+                      name="cuoEV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVV]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoVV]"
+                      name="cuoVV"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin1p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin1p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin1p5]"
+                      name="cuoMin1p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas1p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas1p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas1p5]"
+                      name="cuoMas1p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin2p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin2p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin2p5]"
+                      name="cuoMin2p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas2p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas2p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas2p5]"
+                      name="cuoMas2p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin3p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin3p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMin3p5]"
+                      name="cuoMin3p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas3p5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas3p5]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoMas3p5]"
+                      name="cuoMas3p5"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan0a1]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan0a1]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan0a1]"
+                      name="cuoRan0a1"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan2a3]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan2a3]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan2a3]"
+                      name="cuoRan2a3"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan4aMas]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan4aMas]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoRan4aMas]"
+                      name="cuoRan4aMas"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoA]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoA]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoA]"
+                      name="cuoA"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoNA]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoNA]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[cuoNA]"
+                      name="cuoNA"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[vivo]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[vivo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[vivo]"
+                      name="vivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[minimo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[minimo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[minimo]"
+                      name="minimo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistLocal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[chartistLocal]"
+                      length="200"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistLocal]"
+                      name="chartistLocal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistVisit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[chartistVisit]"
+                      length="200"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[chartistVisit]"
+                      name="chartistVisit"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[anio]"
+                      dataType="wstr"
+                      length="8"
+                      name="anio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[program]"
+                      dataType="wstr"
+                      length="6"
+                      name="program" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[matchCode]"
+                      dataType="wstr"
+                      length="5"
+                      name="matchCode" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[league]"
+                      dataType="wstr"
+                      length="8"
+                      name="league" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[flag]"
+                      dataType="wstr"
+                      length="50"
+                      name="flag" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[leagueDesc]"
+                      dataType="wstr"
+                      length="50"
+                      name="leagueDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[betLocal]"
+                      dataType="wstr"
+                      length="250"
+                      name="betLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[betVisit]"
+                      dataType="wstr"
+                      length="250"
+                      name="betVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlVersus]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlVersus" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlLocal]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[urlVisit]"
+                      dataType="wstr"
+                      length="250"
+                      name="urlVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[teamLocal]"
+                      dataType="wstr"
+                      length="50"
+                      name="teamLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[teamVisit]"
+                      dataType="wstr"
+                      length="50"
+                      name="teamVisit" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[estate]"
+                      dataType="wstr"
+                      length="1"
+                      name="estate" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cHour]"
+                      dataType="wstr"
+                      length="5"
+                      name="cHour" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoL]"
+                      dataType="numeric"
+                      name="cuoL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoE]"
+                      dataType="numeric"
+                      name="cuoE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoV]"
+                      dataType="numeric"
+                      name="cuoV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouLE]"
+                      dataType="numeric"
+                      name="cuoDouLE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouLV]"
+                      dataType="numeric"
+                      name="cuoDouLV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoDouEV]"
+                      dataType="numeric"
+                      name="cuoDouEV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TL]"
+                      dataType="numeric"
+                      name="cuo1TL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TE]"
+                      dataType="numeric"
+                      name="cuo1TE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo1TV]"
+                      dataType="numeric"
+                      name="cuo1TV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TL]"
+                      dataType="numeric"
+                      name="cuo2TL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TE]"
+                      dataType="numeric"
+                      name="cuo2TE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuo2TV]"
+                      dataType="numeric"
+                      name="cuo2TV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLL]"
+                      dataType="numeric"
+                      name="cuoLL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEL]"
+                      dataType="numeric"
+                      name="cuoEL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVL]"
+                      dataType="numeric"
+                      name="cuoVL"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLE]"
+                      dataType="numeric"
+                      name="cuoLE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEE]"
+                      dataType="numeric"
+                      name="cuoEE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVE]"
+                      dataType="numeric"
+                      name="cuoVE"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoLV]"
+                      dataType="numeric"
+                      name="cuoLV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoEV]"
+                      dataType="numeric"
+                      name="cuoEV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoVV]"
+                      dataType="numeric"
+                      name="cuoVV"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin1p5]"
+                      dataType="numeric"
+                      name="cuoMin1p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas1p5]"
+                      dataType="numeric"
+                      name="cuoMas1p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin2p5]"
+                      dataType="numeric"
+                      name="cuoMin2p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas2p5]"
+                      dataType="numeric"
+                      name="cuoMas2p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMin3p5]"
+                      dataType="numeric"
+                      name="cuoMin3p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoMas3p5]"
+                      dataType="numeric"
+                      name="cuoMas3p5"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan0a1]"
+                      dataType="numeric"
+                      name="cuoRan0a1"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan2a3]"
+                      dataType="numeric"
+                      name="cuoRan2a3"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoRan4aMas]"
+                      dataType="numeric"
+                      name="cuoRan4aMas"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoA]"
+                      dataType="numeric"
+                      name="cuoA"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[cuoNA]"
+                      dataType="numeric"
+                      name="cuoNA"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[vivo]"
+                      dataType="bool"
+                      name="vivo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[minimo]"
+                      dataType="i4"
+                      name="minimo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[chartistLocal]"
+                      dataType="wstr"
+                      length="200"
+                      name="chartistLocal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[chartistVisit]"
+                      dataType="wstr"
+                      length="200"
+                      name="chartistVisit" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[anio]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[anio]"
+                      name="anio" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[program]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[program]"
+                      name="program" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[matchCode]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[matchCode]"
+                      name="matchCode" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[league]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[league]"
+                      name="league" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[flag]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[flag]"
+                      name="flag" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[leagueDesc]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[leagueDesc]"
+                      name="leagueDesc" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[betLocal]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[betLocal]"
+                      name="betLocal" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[betVisit]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[betVisit]"
+                      name="betVisit" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlVersus]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlVersus]"
+                      name="urlVersus" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlLocal]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlLocal]"
+                      name="urlLocal" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlVisit]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[urlVisit]"
+                      name="urlVisit" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[teamLocal]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[teamLocal]"
+                      name="teamLocal" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[teamVisit]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[teamVisit]"
+                      name="teamVisit" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[estate]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[estate]"
+                      name="estate" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cHour]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cHour]"
+                      name="cHour" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoL]"
+                      name="cuoL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoE]"
+                      name="cuoE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoV]"
+                      name="cuoV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouLE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouLE]"
+                      name="cuoDouLE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouLV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouLV]"
+                      name="cuoDouLV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouEV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoDouEV]"
+                      name="cuoDouEV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TL]"
+                      name="cuo1TL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TE]"
+                      name="cuo1TE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo1TV]"
+                      name="cuo1TV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TL]"
+                      name="cuo2TL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TE]"
+                      name="cuo2TE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuo2TV]"
+                      name="cuo2TV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLL]"
+                      name="cuoLL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEL]"
+                      name="cuoEL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVL]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVL]"
+                      name="cuoVL"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLE]"
+                      name="cuoLE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEE]"
+                      name="cuoEE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVE]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVE]"
+                      name="cuoVE"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoLV]"
+                      name="cuoLV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoEV]"
+                      name="cuoEV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVV]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoVV]"
+                      name="cuoVV"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin1p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin1p5]"
+                      name="cuoMin1p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas1p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas1p5]"
+                      name="cuoMas1p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin2p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin2p5]"
+                      name="cuoMin2p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas2p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas2p5]"
+                      name="cuoMas2p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin3p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMin3p5]"
+                      name="cuoMin3p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas3p5]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoMas3p5]"
+                      name="cuoMas3p5"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan0a1]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan0a1]"
+                      name="cuoRan0a1"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan2a3]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan2a3]"
+                      name="cuoRan2a3"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan4aMas]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoRan4aMas]"
+                      name="cuoRan4aMas"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoA]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoA]"
+                      name="cuoA"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoNA]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[cuoNA]"
+                      name="cuoNA"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[vivo]"
+                      dataType="bool"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[vivo]"
+                      name="vivo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[minimo]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[minimo]"
+                      name="minimo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[chartistLocal]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[chartistLocal]"
+                      name="chartistLocal" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[chartistVisit]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[chartistVisit]"
+                      name="chartistVisit" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+              endId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Tarea Flujo de datos\Origen de ADO NET"
+          TopLeft="123,178" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Tarea Flujo de datos\Destino de archivo plano"
+          TopLeft="106,311" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+          TopLeft="205.9,219.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91.4"
+              Start="0,0"
+              End="0,83.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

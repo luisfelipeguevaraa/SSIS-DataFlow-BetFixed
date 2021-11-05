@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS-DataFlow-BetFixed", "SSIS-DataFlow-BetFixed.dtproj", "{C9D7C2FE-191C-4B74-A760-C9F682E967BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9D7C2FE-191C-4B74-A760-C9F682E967BC}.Development|Default.ActiveCfg = Development
+		{C9D7C2FE-191C-4B74-A760-C9F682E967BC}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48F8D86B-A254-463F-9786-2E53F62D5D70}
+	EndGlobalSection
+EndGlobal
